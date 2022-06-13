@@ -112,7 +112,7 @@ print("-----------------------------------------------------")
 CuentaJoven2.mostrar()
 print(CuentaJoven2.esTitularValido())
 print("-----------------------------------------------------")
-retiro=50
-print("Retiro de plata: $",retiro)
-CuentaJoven2.retirar(retiro)
+retirojoven=50
+print("Retiro de plata: $",retirojoven)
+CuentaJoven2.retirar(retirojoven)
 CuentaJoven2.mostrar()
