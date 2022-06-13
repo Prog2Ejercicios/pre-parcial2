@@ -16,3 +16,9 @@ Escribir una función ``es_vocal(caracter)`` que tome un carácter y devuelva un
 - ``mostrar()``: Muestra los datos de la cuenta.
 - ``ingresar(cantidad)``: se ingresa una cantidad a la cuenta, si la cantidad introducida es negativa, no se hará nada.
 - ``retirar(cantidad)``: se retira una cantidad a la cuenta. La cuenta puede estar en números rojos.
+## 3.3 Crear clase CuentaJoven, que deriva de la anterior. Cuando se crea esta nueva clase, además del titular y la cantidad se debe guardar una bonificación que estará expresada en tanto por ciento. Implementar los siguientes metodos:
+
+- Un constructor con bonificacion opcional(0 por defecto).
+- En esta ocasión los titulares de este tipo de cuenta tienen que ser mayor de edad, por lo tanto hay que crear un método esTitularValido() que devuelve verdadero si el titular es mayor de edad pero menor de 25 años y falso en caso contrario.
+- Además la retirada de dinero sólo se podrá hacer si el titular es válido.
+- El método mostrar() debe devolver el mensaje de “Cuenta Joven” y la bonificación de la cuenta.
