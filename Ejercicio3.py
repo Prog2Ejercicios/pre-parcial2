@@ -75,10 +75,9 @@ class CuentaJoven(Cuenta):
         if(self.esTitularValido()) == True:
             super().retirar(cantidad)
 
+print("3.1")
 Persona1 = Persona("Juan", 10, "12345678")
 Persona2 = Persona("Pedro", 20,"87654321")
-
-print("3.1")
 print("----------------------------------------------------")
 Persona1.mostrar()
 print(Persona1.esMayorDeEdad())
@@ -87,9 +86,8 @@ Persona2.mostrar()
 print(Persona2.esMayorDeEdad())
 print("-----------------------------------------------------")
 
-Cuenta1 = Cuenta(Persona2, 100)
-
 print("3.2")
+Cuenta1 = Cuenta(Persona2, 100)
 print("----------------------------------------------------")
 Cuenta1.mostrar()
 print("-----------------------------------------------------")
@@ -102,6 +100,19 @@ retiro=50
 print("Retiro de plata: $",retiro)
 Cuenta1.retirar(retiro)
 Cuenta1.mostrar()
+print("-----------------------------------------------------")
 
+print("3.3")
 CuentaJoven1 = CuentaJoven(Persona1, 100, 10)
-CuentaJoven2 = CuentaJoven(Persona2, 100, 10, 20)
+CuentaJoven2 = CuentaJoven(Persona2, 100, 20)
+print("----------------------------------------------------")
+CuentaJoven1.mostrar()
+print(CuentaJoven1.esTitularValido())
+print("-----------------------------------------------------")
+CuentaJoven2.mostrar()
+print(CuentaJoven2.esTitularValido())
+print("-----------------------------------------------------")
+retiro=50
+print("Retiro de plata: $",retiro)
+CuentaJoven2.retirar(retiro)
+CuentaJoven2.mostrar()
