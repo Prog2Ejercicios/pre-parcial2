@@ -13,10 +13,11 @@
 - ``ingresar(cantidad)``: se ingresa una cantidad a la cuenta, si la cantidad introducida es negativa, no se hará nada.
 - ``retirar(cantidad)``: se retira una cantidad a la cuenta. La cuenta puede estar en números rojos.
 
-## 3.3 Crear clase CuentaJoven, que deriva de la anterior. Cuando se crea esta nueva clase, además del titular y la cantidad se debe guardar una bonificación que estará expresada en tanto por ciento. Implementar los siguientes metodos:
-
+## 3.3 Crear clase CuentaJoven, que deriva de la anterior. Cuando se crea esta nueva clase, además del titular y la cantidad se debe 
+guardar una bonificación que estará expresada en tanto por ciento. Implementar los siguientes metodos:
 - Un constructor con bonificacion opcional(0 por defecto).
-- En esta ocasión los titulares de este tipo de cuenta tienen que ser mayor de edad, por lo tanto hay que crear un método esTitularValido() que devuelve verdadero si el titular es mayor de edad pero menor de 25 años y falso en caso contrario.
+- En esta ocasión los titulares de este tipo de cuenta tienen que ser mayor de edad, por lo tanto hay que crear un método esTitularValido() que 
+devuelve verdadero si el titular es mayor de edad pero menor de 25 años y falso en caso contrario.
 - Además la retirada de dinero sólo se podrá hacer si el titular es válido.
 - El método mostrar() debe devolver el mensaje de “Cuenta Joven” y la bonificación de la cuenta.
 '''
@@ -55,6 +56,25 @@ class Cuenta:
         if(cantidad > 0):
             self.cantidad -= cantidad
 
+class CuentaJoven(Cuenta):
+    def __init__(self, titular, cantidad = 0, bonificacion = 0):
+        super().__init__(titular, cantidad)
+        self.bonificacion = bonificacion
+    
+    def esTitularValido(self):
+        if(self.titular.edad >= 18 and self.titular.edad < 25):
+            return True
+        else:
+            return False
+
+    def mostrar(self):
+        super().mostrar()
+        print("Bonificacion: ", self.bonificacion)
+
+    def retirar(self, cantidad):
+        if(self.esTitularValido()) == True:
+            super().retirar(cantidad)
+
 Persona1 = Persona("Juan", 10, "12345678")
 Persona2 = Persona("Pedro", 20,"87654321")
 
@@ -82,3 +102,6 @@ retiro=50
 print("Retiro de plata: $",retiro)
 Cuenta1.retirar(retiro)
 Cuenta1.mostrar()
+
+CuentaJoven1 = CuentaJoven(Persona1, 100, 10)
+CuentaJoven2 = CuentaJoven(Persona2, 100, 10, 20)
